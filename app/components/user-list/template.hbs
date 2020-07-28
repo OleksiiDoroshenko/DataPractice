@@ -1,0 +1,11 @@
+<ul>
+  {{#each renderUsers as |user|}}
+    <li>
+      {{user.name}}
+      has:
+      {{#each user.books as |book|}}
+        , {{book.name}}
+      {{/each}}
+    </li>
+  {{/each}}
+</ul>
