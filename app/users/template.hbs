@@ -1,4 +1,7 @@
-<div>
-  <h1> User list</h1>
-  <UserList @users={{model}}/>
+<div class="user-list">
+  {{#if isExpanded}}
+    <h1> User list</h1>
+    <UserList @users={{model}}/>
+  {{/if}}
+  <button {{action 'toggleUsers'}}>{{label}}</button>
 </div>

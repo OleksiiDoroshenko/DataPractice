@@ -16,6 +16,21 @@ export default Route.extend({
     })
     const records = this.store.peekAll('user');
     debugger;
-    return records;
+
+    return new Promise((resolve) => {
+      debugger;
+      return resolve(records)
+    });
+  },
+
+  actions: {
+    loading(transition) {
+      debugger
+      let start = new Date();
+      transition.promise.finally(() => {
+        alert(`Took ${new Date - start}ma to load`);
+      });
+      return true;
+    }
   }
 });
