@@ -9,22 +9,20 @@ export default Route.extend({
           type: 'user',
           attributes: {
             name: 'Alex',
-            books: [
-              {
-                id:'1',
-                type:'book',
-                attributes:{
-                  name: 'book 1',
-                }
-              },
-              {
-                id:'2',
-                type:'book',
-                attributes:{
-                  name: 'book 2',
-                }
-              },
-            ]
+          },
+          relationships: {
+            books: {
+              data: [{
+                id: '1',
+                type: 'book'
+              }, {
+                id: '2',
+                type: 'book'
+              }, {
+                id: '3',
+                type: 'book'
+              }]
+            }
           }
         },
         {
@@ -32,16 +30,66 @@ export default Route.extend({
           type: 'user',
           attributes: {
             name: 'Dima',
-            books: [
-              {
-                name: 'book 1',
-              },
-              {
-                name: 'book 2',
-              }
-            ]
+          },
+          relationships: {
+            books: {
+              data: [{
+                id: '4',
+                type: 'book'
+              }, {
+                id: '5',
+                type: 'book'
+              }, {
+                id: '6',
+                type: 'book'
+              }]
+            }
           }
-        }
+        },
+      ],
+      included: [
+        {
+          id: '1',
+          type: 'book',
+          attributes: {
+            name: 'Book 1'
+          }
+        },
+        {
+          id: '2',
+          type: 'book',
+          attributes: {
+            name: 'Book 2'
+          }
+        }, {
+
+          id: '3',
+          type: 'book',
+          attributes: {
+            name: 'Book 3'
+          }
+        },
+        {
+          id: '4',
+          type: 'book',
+          attributes: {
+            name: 'Book 4'
+          }
+        },
+        {
+          id: '5',
+          type: 'book',
+          attributes: {
+            name: 'Book 5'
+          }
+        }, {
+
+          id: '6',
+          type: 'book',
+          attributes: {
+            name: 'Book 6'
+          }
+        },
       ]
     });
 
