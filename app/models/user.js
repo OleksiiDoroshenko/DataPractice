@@ -1,6 +1,10 @@
-import DS from 'ember-data';
+import attr from 'ember-data/attr';
+import Model from 'ember-data/model';
+import {
+  fragmentArray,
+} from 'ember-data-model-fragments/attributes';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  books: DS.hasMany('book')
+export default Model.extend({
+  name: attr('string'),
+  books: fragmentArray('book')
 });
